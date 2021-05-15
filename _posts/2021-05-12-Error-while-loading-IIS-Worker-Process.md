@@ -4,7 +4,7 @@ title: "Error while loading IIS Worker Processes."
 date: 2021-05-12
 #date: 2019-04-18T15:34:30-04:00
 categories:
-  - blog
+  - Blog
 
 tags:
   - IIS
@@ -12,9 +12,11 @@ tags:
 ---
 Sometimes we see failure dialog, while loading the Worker Process feature in Internet Information Service (IIS). It fails with different types of similar errors something like - `There was an error while performing this operation. Details : Category Does not exist”.`  
 
-<p><a href="https://abhimantiwari.github.io/Content/WorkerProcessError.png"></a> </p>
-<img title="image" style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" height="150" alt="image" src="/Content/WorkerProcessError.png" width="200" border="0">
+<!--p><a href="https://abhimantiwari.github.io/Content/WorkerProcessError.png"></a> </p -->
+<img title="image" style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" height="200" alt="image" src="/Content/WorkerProcessError.png" width="300" border="0">
 
+<br/>
+<br/>
 <p>If you look at the Application event log, you may see event from `Perflib` source, something like this - </p>
 
 ```ruby
@@ -84,6 +86,7 @@ Note - If the above commands fail (*it does sometimes*), just change the order o
 Resync the counters with Windows Management Instrumentation (WMI) by running below command -
 WINMGMT.EXE /RESYNCPERF
 ```
-
+<br/>
+<br/>
 <p>Reference link - </p>
 <li><a title="https://docs.microsoft.com/en-us/troubleshoot/windows-server/performance/manually-rebuild-performance-counters#rebuild-all-performance-counters-including-extensible-and-third-party-counters" href="https://docs.microsoft.com/en-us/troubleshoot/windows-server/performance/manually-rebuild-performance-counters#rebuild-all-performance-counters-including-extensible-and-third-party-counters">https://docs.microsoft.com/en-us/troubleshoot/windows-server/performance/manually-rebuild-performance-counters#rebuild-all-performance-counters-including-extensible-and-third-party-counters</a></li>
