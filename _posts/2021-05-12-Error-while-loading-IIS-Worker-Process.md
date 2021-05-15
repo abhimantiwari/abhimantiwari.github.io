@@ -16,7 +16,6 @@ Sometimes we see failure dialog, while loading the Worker Process feature in Int
 <img title="image" style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" height="200" alt="image" src="/Content/WorkerProcessError.png" width="300" border="0">
 
 <br/>
-<br/>
 <p>If you look at the Application event log, you may see event from `Perflib` source, something like this - </p>
 
 ```ruby
@@ -24,7 +23,7 @@ Sometimes we see failure dialog, while loading the Worker Process feature in Int
 
 2. The Collect Procedure for the "PerfProc" service in DLL "C:\Windows\system32\perfproc.dll" generated an exception or returned an invalid status. The performance data returned by the counter DLL will not be returned in the Perf Data Block. The first four bytes (DWORD) of the Data section contains the exception code or status code.
 ```
-
+<br/>
 <p>You can verify if below registry location has any key with the name `DisablePerformanceCounters`.</p>
 ```ruby
 Registry path: `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\%servicename%\Performance`
@@ -69,7 +68,7 @@ Performance Counter ID Queries [PERFLIB]:
     Close Procedure: CloseSysProcessObject
 ```
 
-
+<br/>
 <p>If Worker Processes still fails to load, even if the `Performance Counters is (Enabled)` or after executing above commands. You will need to rebuld all the perfomance counters by execuing below commands -</p>
 
 ```ruby
