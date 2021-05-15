@@ -13,6 +13,7 @@ tags:
 Sometimes we see failure dialog, while loading the Worker Process feature in Internet Information Service (IIS). It fails with different types of similar errors something like - `There was an error while performing this operation. Details : Category Does not exist”.`  
 
 <p><a href="https://abhimantiwari.github.io/Content/WorkerProcessError.png"></a> </p>
+<img title="image" style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" height="150" alt="image" src="/Content/WorkerProcessError.png" width="200" border="0">
 
 <p>If you look at the Application event log, you may see event from `Perflib` source, something like this - </p>
 
