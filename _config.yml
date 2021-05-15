@@ -118,7 +118,7 @@ social:
 analytics:
   provider               : "google-gtag"
   google:
-    tracking_id          : "UA-"
+    tracking_id          : "G-D7SNRN2GR1"
     anonymize_ip         : false 
 
 author:
