@@ -16,10 +16,10 @@ Sometimes we see failure dialog, while loading the Worker Process feature in Int
 <img title="image" style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" height="200" alt="image" src="/Content/WorkerProcessError.png" width="300" border="0">
 
 <br/>
-<p>If you look at the Application event log, you may see event from `Perflib` source, something like this - </p>
+<p>If you look at the Application event log, you may see events from `Perflib` source, something like this - </p>
 
 ```ruby
-1. The Open Procedure for service "BITS" in DLL "C:\\Windows\System32\bitsperf.dll" failed. Performance data for this service will not be available. The fist four bytes (DWORD) of the Data selection contains the error code.
+1. The Open Procedure for service "BITS" in DLL "C:\\Windows\System32\bitsperf.dll" failed. Performance data for this service will not be available. The first four bytes (DWORD) of the Data selection contains the error code.
 
 2. The Collect Procedure for the "PerfProc" service in DLL "C:\Windows\system32\perfproc.dll" generated an exception or returned an invalid status. The performance data returned by the counter DLL will not be returned in the Perf Data Block. The first four bytes (DWORD) of the Data section contains the exception code or status code.
 ```
@@ -29,7 +29,7 @@ Sometimes we see failure dialog, while loading the Worker Process feature in Int
 Registry path: `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\%servicename%\Performance`
 ```
 
-<p>Open the command prompt and Run this command - `lodctr /q:PerfProc` and check the output, if it shows `Performance Counters (Disabled/ Enabled)`. </p>
+<p>Open the command prompt and run this command - `lodctr /q:PerfProc` and check the output if it shows `Performance Counters (Disabled/ Enabled)`. </p>
 
 ```ruby
 Performance Counter ID Queries [PERFLIB]:
@@ -50,7 +50,7 @@ Performance Counter ID Queries [PERFLIB]:
  lodctr /e:PerfProc
  ```
   
-<p>To ensure that Performance Counters has been Enabled, run the below command and see if the Performance counter is enabled now (as shown below). If so, you can reload the IIS and see if workder process is loading fine now. </p>
+<p>To ensure that Performance Counters has been Enabled, run the below command, and see if the Performance counter is enabled now (as shown below). If so, you can reload the IIS and see if worker process is loading fine now. </p>
 
 ```ruby
 lodctr /q:PerfProc
@@ -69,7 +69,7 @@ Performance Counter ID Queries [PERFLIB]:
 ```
 
 <br/>
-<p>If Worker Processes still fails to load, even if the `Performance Counters is (Enabled)` or after executing above commands. You will need to rebuld all the perfomance counters by execuing below commands -</p>
+<p>If Worker Processes still fails to load, even if the `Performance Counters is (Enabled)` or after executing above commands. You will need to rebuild all the performance counters by executing below commands -</p>
 
 ```ruby
 Open command prompt
