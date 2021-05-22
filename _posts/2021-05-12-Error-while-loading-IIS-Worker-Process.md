@@ -28,8 +28,8 @@ You can verify if below registry location has any key with the name `DisablePerf
 ```ruby
 Registry path: `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\%servicename%\Performance`
 ```
-
-<p>Open the command prompt and run this command - `lodctr /q:PerfProc` and check the output if it shows `Performance Counters (Disabled/ Enabled)`. </p>
+<br/>
+Open the command prompt and run this command - `lodctr /q:PerfProc` and check the output if it shows `Performance Counters (Disabled/ Enabled)`.
 
 ```ruby
 Performance Counter ID Queries [PERFLIB]:
@@ -44,11 +44,12 @@ Performance Counter ID Queries [PERFLIB]:
     Close Procedure: CloseSysProcessObject
 ```
 
-
-<p>If the above output returns `Performance Counters (Disabled)`. It can be fixed by running the below commands as shown below. </p>
+<br/>
+If the above output returns `Performance Counters (Disabled)`. It can be fixed by running the below commands as shown below.
  ```ruby
  lodctr /e:PerfProc
  ```
+ <br/>
   
 <p>To ensure that Performance Counters has been Enabled, run the below command, and see if the Performance counter is enabled now (as shown below). If so, you can reload the IIS and see if worker process is loading fine now. </p>
 
@@ -69,22 +70,26 @@ Performance Counter ID Queries [PERFLIB]:
 ```
 
 <br/>
-<p>If Worker Processes still fails to load, even if the `Performance Counters is (Enabled)` or after executing above commands. You will need to rebuild all the performance counters by executing below commands -</p>
+If Worker Processes still fails to load, even if the `Performance Counters is (Enabled)` or after executing above commands. You will need to rebuild all the performance counters including extensible and third-party counter by executing below commands -
 
 ```ruby
-Open command prompt
+1. Rebuild the counters:
+
+Open elevated command prompt (Run as Administrator)
 cd c:\windows\system32
-lodctr /R
+c:\windows\system32>lodctr /R
 
 cd c:\windows\sysWOW64
-lodctr /R
+c:\windows\sysWOW64>lodctr /R
 
-Note - If the above commands fail (*it does sometimes*), just change the order of execution and it should run fine.
+**Note** - If the above commands fail (*it does sometimes*), just change the order of execution and it should run fine.
 
+2.Resync the counters with Windows Management Instrumentation (WMI) by running below command -
+c:\windows\sysWOW64>WINMGMT.EXE /RESYNCPERF
 
-Resync the counters with Windows Management Instrumentation (WMI) by running below command -
-WINMGMT.EXE /RESYNCPERF
+3. Restart IIS (Internet Information Services) Manager and load Worker Processes
 ```
+>PS - Sometimes, running `lodctr /R` may not recover all counters. If you notice this happening, verify the file `c:\windows\system32\PerfStringBackup.INI` contains the proper information. You can copy this file from an identical machine to restore the counters. There may be slight differences in this file from machine to machine. But if you notice a drastic difference in size, it may be missing information. Always create a backup copy before replacing. Refer below mentioned reference article for more details.
 <br/>
 <br/>
 <p>Reference link - </p>
