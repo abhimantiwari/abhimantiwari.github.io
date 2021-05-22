@@ -45,13 +45,13 @@ Performance Counter ID Queries [PERFLIB]:
 ```
 
 <br/>
-If the above output returns `Performance Counters (Disabled)`. It can be fixed by running the below commands as shown below.
+If the above output returns `Performance Counters (Disabled)`. It can be enabled/fixed by running the below commands -
  ```ruby
  lodctr /e:PerfProc
  ```
  <br/>
   
-<p>To ensure that Performance Counters has been Enabled, run the below command, and see if the Performance counter is enabled now (as shown below). If so, you can reload the IIS and see if worker process is loading fine now. </p>
+<p>To ensure that Performance Counters has been Enabled now, run the below command, and see if the Performance counter is enabled now (as shown below). If so, restart IIS (Internet Information Services) Manager and load Worker Processes to see if it's loading fine now. </p>
 
 ```ruby
 lodctr /q:PerfProc
@@ -83,6 +83,7 @@ cd c:\windows\sysWOW64
 c:\windows\sysWOW64>lodctr /R
 
 **Note** - If the above commands fail (*it does sometimes*), just change the order of execution and it should run fine.
+
 
 2.Resync the counters with Windows Management Instrumentation (WMI) by running below command -
 c:\windows\sysWOW64>WINMGMT.EXE /RESYNCPERF
