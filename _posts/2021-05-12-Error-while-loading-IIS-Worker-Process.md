@@ -9,13 +9,13 @@ tags:
   - IIS
   - Worker Process
 ---
-Sometimes we see failure dialog, while loading the Worker Process feature in Internet Information Service (IIS). It fails with different types of similar errors something like - `There was an error while performing this operation. Details : Category Does not exist”.`  
+Sometimes we see failure dialog, while loading the Worker Process feature in Internet Information Service (IIS). It fails with different types of similar errors something like - `There was an error while performing this operation. Details : Category Does not exist.`  
 
 <!--p><a href="https://abhimantiwari.github.io/Content/WorkerProcessError.png"></a> </p -->
 <img title="image" style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; DISPLAY: inline; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px" height="200" alt="image" src="/Content/WorkerProcessError.png" width="300" border="0">
 
 <br/>
-<p>If you look at the Application event log, you may see events from `Perflib` source, something like this - </p>
+If you look at the Application event log, you may see events from `Perflib` source, something like this -
 
 ```ruby
 1. The Open Procedure for service "BITS" in DLL "C:\Windows\System32\bitsperf.dll" failed. Performance data for this service will not be available. The first four bytes (DWORD) of the Data selection contains the error code.
@@ -23,7 +23,8 @@ Sometimes we see failure dialog, while loading the Worker Process feature in Int
 2. The Collect Procedure for the "PerfProc" service in DLL "C:\Windows\system32\perfproc.dll" generated an exception or returned an invalid status. The performance data returned by the counter DLL will not be returned in the Perf Data Block. The first four bytes (DWORD) of the Data section contains the exception code or status code.
 ```
 <br/>
-<p>You can verify if below registry location has any key with the name `DisablePerformanceCounters`.</p>
+You can verify if below registry location has any key with the name `DisablePerformanceCounters`.
+<br/>
 ```ruby
 Registry path: `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\%servicename%\Performance`
 ```
