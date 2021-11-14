@@ -6,7 +6,7 @@ categories:
 tags:
   - Application Initialization
   - IIS
-  - Warrm-up
+  - Warm-up
   - Cold Start Issue
 ---
 
