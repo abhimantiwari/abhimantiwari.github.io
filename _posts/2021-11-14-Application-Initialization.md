@@ -11,7 +11,7 @@ tags:
 ---
 
 <h3>Problem:</h3>
-Sometimes we need to perform application initialization to avoid "warm up" time or "cold start" issue on huge and complex web application which may need to perform lengthy startup processing, load a lot of libraries, prime in-memory caches, generate or pre-process some content, etc. prior to serving the first HTTP request.
+Sometimes we need to perform application initialization to avoid "warm up" time on first request or "cold start" issue on huge and complex web application which may need to perform lengthy startup processing, load quite a few libraries, prime in-memory caches, generate or pre-process some content etc. prior to serving the first HTTP request.
   
 Sometimes we also face time-out issues due to longer "warm-up" time. Also in some weird case, when first request to Website fails and you want to hide that from end users.
 

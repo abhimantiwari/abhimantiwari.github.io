@@ -59,7 +59,7 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification :  #"jFRfqFHBBq3UDtKzsU_GMdBmQ4Ls4VmQ62P73-b6QDA" #"_CmglV2NilYNmAa_pAGfYTu-_x5IUJ5b1sSQgnsacoc"
+google_site_verification :  "jFRfqFHBBq3UDtKzsU_GMdBmQ4Ls4VmQ62P73-b6QDA" #"_CmglV2NilYNmAa_pAGfYTu-_x5IUJ5b1sSQgnsacoc"
 bing_site_verification   : "BEA2E1B8DE4031040BA34EEA42881E07"
 alexa_site_verification  :
 yandex_site_verification :
@@ -118,7 +118,7 @@ social:
 analytics:
   provider               : "google-gtag"
   google:
-    #tracking_id          : "G-D7SNRN2GR1"
+    tracking_id          : "G-D7SNRN2GR1"
     anonymize_ip         : false 
 
 author:
