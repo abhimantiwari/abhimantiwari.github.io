@@ -138,4 +138,4 @@ function PrintUsage() {
 }
 ```
 
-HTH!
+Hope it helps!
