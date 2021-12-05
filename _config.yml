@@ -19,7 +19,7 @@ description: "Powered by Jekyll and minimal-mistakes theme"
 url                      : "https://abhimantiwari.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "abhimantiwari/abhimantiwari.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-twitter_username: abhimankumar
+twitter_username: abhimantiwari
 github_username: abhimantiwari
 minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
 search: true
@@ -134,7 +134,7 @@ author:
       url: "https://stackoverflow.com/users/5288239/abhiman-tiwari?tab=profile"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/abhimankumar"
+      url: "https://twitter.com/abhimantiwari"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/abhimantiwari"
