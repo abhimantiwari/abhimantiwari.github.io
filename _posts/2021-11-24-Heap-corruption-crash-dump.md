@@ -11,6 +11,12 @@ tags:
 ---
 A heap corruption is defined as a problem that violates the heap's integrity and produces unexpected behavior in an application. It can happen if dynamic memory allocation and deallocation aren't handled appropriately in application code.
 
+Some of the common causes of heap corruption -
+- Buffer overrun (writing beyond the allocated memory) overrun and underrun
+- Double free (freeing a pointer twice) 
+- Old pointer reuse(reusing a pointer after being freed)
+- Dangling Pointers
+
 The process would not crash until the corrupted heap is accessed, but when a thread tries to use that corrupted block of memory in the heap, the application process will terminate, which makes it difficult to troubleshoot. If we capture a normal crash dump in this scenario, the problematic thread we’ll see in the dump, may not be the one that triggered the problem, but rather could be the victim thread.
 
 So, to find the underlying cause and determine the actual issue, we should capture crash dump with pageheap enabled.
