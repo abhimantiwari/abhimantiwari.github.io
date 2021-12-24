@@ -79,4 +79,4 @@ Capture Heap corruption crash dumps using GFlag -
 GFlag can be downloaded from [here](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/gflags).
 
 
-Hope it helps! :-)
+Hope it helps! :slightly_smiling_face:
