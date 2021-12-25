@@ -5,9 +5,12 @@ layout: home
 author_profile: true
 ---
 
-This is the blogging site. You can find out blogs relatd to Web apps troubleshooting and diagnotics.
+Engineer with Microsoft, working on the ASP.NET team, and doing a lot of .NET debugging, profiling, reverse engineering, and web-application performance tuning.
 
-You can find the source code for some of the samples at [GitHub](https://github.com/abhimantiwari).
+I owe a lot to the community, and I'm trying to pay it forward by contributing a little bit back through any means possible. This blog is my humble way of giving back to society. You can find blogs on Web Apps technologies, Azure SQL/Data, Azure Bot Services, Diagnostics, and other related technologies on the portal.
+More to come!
+
+Some of the samples' source code is available on [GitHub](https://github.com/abhimantiwari).
 <br/>
 <br/>
 <br/>

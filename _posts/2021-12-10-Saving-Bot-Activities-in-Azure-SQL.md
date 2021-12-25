@@ -173,4 +173,4 @@ If you query the tables, you should be able to fetch all the messages exchanged 
 
 >Please note that depending on your Bot, you may need to specify in your Bot’s terms of use directly to notify your users whenever storing user data is involved.
 
-Hope it helps! :smile:
+Hope it helps! :-)
