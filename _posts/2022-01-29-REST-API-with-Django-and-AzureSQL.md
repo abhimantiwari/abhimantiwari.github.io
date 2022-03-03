@@ -64,13 +64,13 @@ If you don't have an Azure SQL server already, you can create one (no additional
 
 Create a resource group if you don't have one already created:
 
-```azurecli-interactive
+```ruby
 az group create -l <location> -n <MyResourceGroup>
 ```
 
 Create the Database Server:
 
-```azurecli-interactive
+```ruby
 az sql server create -n <server-name> -l <location> --admin-user <admin-user> --admin-password <admin-password> -g <resource-group>
 ```
 
@@ -78,13 +78,13 @@ az sql server create -n <server-name> -l <location> --admin-user <admin-user> --
 
 Create a new Azure SQL database:
 
-```azurecli-interactive
+```ruby
 az sql db create -g <resource-group> -s <server-name> -n my-db --service-objective GP_Gen5_2
 ```
 
 Make sure you have the firewall configured to allow your machine to access Azure SQL:
 
-```azurecli-interactive
+```ruby
 az sql server firewall-rule create --resource-group <resource-group> --server <server-name> --name AllowMyClientIP_1 --start-ip-address <your_public_ip> --end-ip-address <your_public_ip>
 ```
 
@@ -289,13 +289,13 @@ This article requires that you're running the Azure CLI version 2.0 or later loc
 
 You'll need to login to your account using the [az login](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli) command.
 
-```azurecli
+```ruby
 az login
 ```
 
 If you have multiple subscriptions, choose the appropriate subscription in which the resource should be created. Select the specific subscription ID under your account using [az account set](https://docs.microsoft.com/en-us/cli/azure/account?view=azure-cli-latest) command. Substitute the subscription ID property from the az login output for your subscription into the subscription ID placeholder.
 
-```azurecli
+```ruby
 az account set --subscription <subscription id>
 ```
 
@@ -327,7 +327,7 @@ Run the below [az webapp](https://docs.microsoft.com/en-us/cli/azure/webapp?view
 
 > [az webapp up](https://docs.microsoft.com/en-us/cli/azure/webapp?view=azure-cli-latest#az-webapp-up) create a webapp and deploy code from a local workspace to the app. Python apps are created as Linux apps by default.
 
-```azurecli
+```ruby
 # Create a web app and deploy the code
 az webapp up -g <MyResourceGroup> -l <location> -p <azure-sql-db-django-plan> --sku B1 -n <azure-sql-db-django-api> -r 'PYTHON:3.9'
 
